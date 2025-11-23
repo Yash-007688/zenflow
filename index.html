@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenFlow | Focus & Clarity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-gradient"></div>
+    <div class="glass-overlay"></div>
+
+    <main class="dashboard">
+        <header class="header">
+            <div class="logo">ZenFlow</div>
+
+            <div class="clock-container">
+                <div id="current-clock">12:00 PM</div>
+                <div class="quote-container">
+                    <p id="quote-text">"Focus is the key to all success."</p>
+                </div>
+            </div>
+
+            <div class="controls-right">
+                <button class="icon-btn" id="sound-toggle" aria-label="Toggle Sound">
+                    <span class="icon">🔊</span>
+                </button>
+                <div class="mode-toggles">
+                    <button class="mode-btn active" id="mode-dark" aria-label="Dark Mode">🌙</button>
+                    <button class="mode-btn" id="mode-light" aria-label="Light Mode">☀️</button>
+                </div>
+                <div class="theme-toggles">
+                    <button class="theme-btn active" data-theme="nebula" aria-label="Nebula Theme"></button>
+                    <button class="theme-btn" data-theme="sunset" aria-label="Sunset Theme"></button>
+                    <button class="theme-btn" data-theme="ocean" aria-label="Ocean Theme"></button>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid-container">
+            <!-- Focus Timer Section -->
+            <section class="card timer-card">
+                <button class="zen-toggle" id="zen-toggle" aria-label="Enter Zen Mode">⛶</button>
+                <h2>Focus</h2>
+                <div class="timer-display">
+                    <svg class="progress-ring" width="240" height="240">
+                        <circle class="progress-ring__circle-bg" stroke="rgba(255,255,255,0.1)" stroke-width="8"
+                            fill="transparent" r="110" cx="120" cy="120" />
+                        <circle class="progress-ring__circle" stroke="white" stroke-width="8" fill="transparent" r="110"
+                            cx="120" cy="120" />
+                    </svg>
+                    <div class="time-text" id="time-display">25:00</div>
+                </div>
+                <div class="custom-time-wrapper">
+                    <input type="text" id="custom-timer-input" placeholder="Set time (e.g. 25 or 10:00)">
+                </div>
+                <div class="timer-controls">
+                    <button id="start-btn" class="btn-primary">Start</button>
+                    <button id="reset-btn" class="btn-secondary">Reset</button>
+                </div>
+            </section>
+
+            <!-- Task List Section -->
+            <section class="card tasks-card">
+                <h2>Tasks</h2>
+                <div class="input-group">
+                    <input type="text" id="task-input" placeholder="What needs to be done?">
+                    <button id="add-task-btn" class="btn-icon">+</button>
+                </div>
+                <ul id="task-list" class="task-list">
+                    <!-- Tasks will be injected here -->
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
